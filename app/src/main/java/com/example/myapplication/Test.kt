@@ -18,18 +18,23 @@ class Calculator{
             println("두번째 숫자를 입력하세요")
             var num2 = readLine()!!.toInt()
 
+            var add = AddOperation()
+            var sub = SubstractOperation()
+            var mul = MultiplyOperation()
+            var div = DivideOperation()
+
             when(operation) {
                 "+" -> {
-                    println("${num1 + num2}")
+                    add.a(num1, num2)
                 }
                 "-" -> {
-                    println("${num1 - num2}")
+                    sub.a(num1, num2)
                 }
                 "*" -> {
-                    println("${num1 * num2}")
+                    mul.a(num1, num2)
                 }
                 "/" -> {
-                    println("${num1 / num2} 나머지는 ${num1 % num2}입니다")
+                    div.a(num1, num2)
                 }
                 "%" -> {
                     println("${num1 % num2}")
@@ -38,6 +43,30 @@ class Calculator{
             }
             println("새로운 계산이 시작됩니다")
         }
+    }
+}
+
+class AddOperation{
+    fun a(num1: Int, num2: Int) {
+        println("${num1 + num2}")
+    }
+}
+
+class SubstractOperation{
+    fun a(num1: Int, num2: Int) {
+        println("${num1 - num2}")
+    }
+}
+
+class MultiplyOperation{
+    fun a(num1: Int, num2: Int) {
+        println("${num1 * num2}")
+    }
+}
+
+class DivideOperation{
+    fun a(num1: Int, num2: Int) {
+        println("${num1 / num2} 나머지는 ${num1 % num2}입니다")
     }
 }
 
